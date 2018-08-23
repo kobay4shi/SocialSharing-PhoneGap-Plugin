@@ -100,6 +100,13 @@ SocialSharing.prototype.canShareViaEmail = function (successCallback, errorCallb
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "canShareViaEmail"), "SocialSharing", "canShareViaEmail", []);
 };
 
+SocialSharing.prototype.shareViaLINE = function(message, file, url, successCallback, errorCallback){
+  cordova.exec(successCallback , this._getErrorCallback(errorCallback, "shareViaLINE"), "SocialSharing", "shareViaLINE", [message, null, this._asArray(file), url]);
+}
+ SocialSharing.prototype.canShareViaLINE = function (successCallback, errorCallback) {
+   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "canShareViaLINE"), "SocialSharing", "canShareViaLINE", []);
+ }
+
 SocialSharing.prototype.shareViaInstagram = function (message, fileOrFileArray, successCallback, errorCallback) {
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaInstagram"), "SocialSharing", "shareViaInstagram", [message, null, this._asArray(fileOrFileArray), null]);
 };
